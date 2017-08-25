@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<?php include 'include/header.php'; ?>
+
 <div class="container">
 <?php
 require 'classes/service/ServiceContainer.php';
@@ -6,7 +7,7 @@ require 'classes/service/ServiceContainer.php';
 $studentService = ServiceContainer::getService('StudentService');
 $result = $studentService->getAllStudents();
 
-$array = array();
+//$array = array();
 if ($result->num_rows > 0):
 ?>
     <table class="table table-striped">
@@ -18,7 +19,7 @@ if ($result->num_rows > 0):
         <tbody>
 <?php
     while($row = $result->fetch_assoc()):
-        $array[] = $row;
+        //$array[] = $row;
 ?>
         <tr>
             <td><?=$row["id"]?></td>
@@ -40,7 +41,7 @@ endif;
     </table>
 </div>
 
-<?php include 'app-include/footer.html'; ?>
+<?php include 'include/footer.php'; ?>
 
 <script>
     $(function(){

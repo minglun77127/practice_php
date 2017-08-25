@@ -7,8 +7,7 @@ class StudentService
 {
     public function getAllStudents(){
         return Database::getInstance()
-            ->query("SELECT id, firstName, lastName, gender, dateOFBirth, city, province, contry, postalCode, email
-                          FROM `tblstudent` WHERE role='student' ORDER BY id DESC");
+            ->query("SELECT id, firstName, lastName, gender, dateOfBirth, city, province, country, postalCode, email FROM `tblstudent` WHERE role='student' ORDER BY id DESC");
     }
 
     public function deleteStudentByID($id){
